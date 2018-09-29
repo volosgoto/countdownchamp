@@ -1,10 +1,28 @@
 import React, { Component } from 'react';
 
 class App extends Component {
+  // to add properties
+  constructor(props) {
+    super(props);
+    
+    // state always object
+    this.state = {
+        deadline : 'December 25, 2018 '
+    }
+
+  }
+
+  // Update state
+  changeDeadline() {
+    this.setState({deadline: 'November 25, 2018'});
+
+  }
+  
+  
   render(){
     return (
       <div className="App">
-        <div className="App-title">Countdown to 25 of december</div> 
+        <div className="App-title">Countdown to {this.state.deadline}</div> 
         <div>
           <div className="Clock-days">14 days</div>
           <div className="Clock-hours">30 hours</div>
@@ -13,7 +31,7 @@ class App extends Component {
         </div>
           <div>
             <input placeholder="new date"/>
-            <button>Submit</button>
+            <button onClick={ () => this.changeDeadline()}>Submit</button>
           </div>
       </div>
       );
