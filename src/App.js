@@ -5,12 +5,12 @@ class App extends Component {
   constructor(props) {
     super(props);
     
+
     // state always object
     this.state = {
         deadline : 'December 25, 2018',
         newDeadline : ''
     }
-
   }
 
   // Update state
