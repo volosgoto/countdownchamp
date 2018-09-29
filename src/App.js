@@ -7,14 +7,17 @@ class App extends Component {
     
     // state always object
     this.state = {
-        deadline : 'December 25, 2018 '
+        deadline : 'December 25, 2018',
+        newDeadline : ''
     }
 
   }
 
   // Update state
   changeDeadline() {
-    this.setState({deadline: 'November 25, 2018'});
+    // this.setState({deadline: 'November 25, 2018'});
+    // console.log('state', this.state);
+    this.setState({deadline: this.state.newDeadline})
 
   }
   
@@ -30,8 +33,13 @@ class App extends Component {
           <div className="Clock-seconds">30 seconds</div>
         </div>
           <div>
-            <input placeholder="new date"/>
-            <button onClick={ () => this.changeDeadline()}>Submit</button>
+            <input 
+              placeholder="new date"
+              // Check input value
+              // onChange = {e => console.log('event', e.target.value)}
+              onChange = { event => this.setState({newDeadlineb : event.target.value}) }
+            />
+            <button onClick={ () => this.changeDeadline() }>Submit</button>
           </div>
       </div>
       );
